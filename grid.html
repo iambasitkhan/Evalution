@@ -16,6 +16,30 @@
     />
     <link rel="stylesheet" href="global.css" />
     <style>
+      p {
+        margin-bottom: 0;
+      }
+      .menu {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+      }
+      .Dashboard-but {
+        color: #1b9a9c;
+      }
+      .nagative-arow {
+        padding-inline: 16px;
+        border-radius: 100px;
+        height: 45px;
+        border: none;
+      }
+      .nagative-arow &l .log-p1 {
+        font-size: 1.7rem;
+      }
+      .log-p2 {
+        font-size: 1.7rem;
+        opacity: 50%;
+      }
       .body-wrapper {
         margin: 5rem;
         padding: 2rem;
@@ -28,6 +52,18 @@
   </head>
   <body class="gradient-green">
     <div class="body-wrapper position-relative">
+      <div class="menu">
+        <button class="nagative-arow">&larr;</button>
+        <div>
+          <button class="button Dashboard-but">Dashboard</button>
+          <button class="button">Projects</button>
+          <button class="button">EV Hub</button>
+        </div>
+        <div class="log-out">
+          <p class="log-p1">log out</p>
+          <p class="log-p2">Welcome, [First Name]</p>
+        </div>
+      </div>
       <div class="breadcrumbs-box opacity-70 mb-5 container">
         <span class="breadcrumbs">Homepage</span>
         <span class="icon-arr">&rarr;</span>
