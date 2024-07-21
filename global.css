@@ -66,7 +66,9 @@ body {
 .gradient-green {
   background: var(--gradient-2);
 }
-
+.badge--secondary {
+  background: var(--color-secondry);
+}
 .button-add {
   border: none;
   width: 30px;
@@ -79,7 +81,7 @@ body {
 .body-wrapper {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(80px);
-  height: 100vh;
+  /* height: 100vh; */
 }
 .breadcrumbs-box {
   font-size: 1.7rem;
@@ -102,7 +104,7 @@ body {
   outline: none;
 }
 .skewed {
-  transform: skewY(-11deg);
+  transform: skewY(-8deg);
 }
 
 .article-card {
@@ -335,3 +337,34 @@ body {
   font-size: 5rem;
   line-height: 1;
 }
+
+/* GLOBAL RESET FOR SWIPPER CLASSES */
+.swiper-button-next,
+.swiper-button-prev {
+  /* bottom: 0; */
+  /* top: 0px !important; */
+  margin-top: 70px !important;
+  right: 50%;
+  left: initial;
+  top: initial;
+  background: #fff !important;
+  width: 44.3px;
+}
+.swiper-button-next {
+  margin-left: 22px;
+  left: 49%;
+}
+.swiper-button-next:after {
+  content: "\2192";
+  font-size: 2.5rem;
+  color: lightgray;
+}
+.swiper-button-prev:after {
+  content: "\2190";
+  font-size: 2.5rem;
+  color: lightgray;
+}
+
+/* .slider-navigation-btns {
+  margin-top: 2rem;
+} */
