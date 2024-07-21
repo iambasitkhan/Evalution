@@ -90,6 +90,9 @@
         font-size: 18px;
         /* Optional: Custom styles for each slide */
       }
+      .swiper-slide .badge {
+        text-transform: uppercase;
+      }
       .swiper-slide .article-card::after {
         content: "";
         height: 80px;
@@ -98,7 +101,7 @@
       }
 
       .article-card img {
-        transform: skewY(11deg);
+        transform: skewY(8deg);
       }
 
       .swiper-button-next,
@@ -113,6 +116,16 @@
         line-height: 40px;
         cursor: pointer;
         margin: 10px;
+      }
+      .card-project {
+        position: relative;
+      }
+      .card-project .badge {
+        position: absolute;
+        top: 10px;
+        left: 20px;
+        z-index: 100;
+        transform: skewY(8deg);
       }
     </style>
   </head>
@@ -136,14 +149,15 @@
           <header class="header mb-4">
             <h1 class="mb-0">Select a Project</h1>
             <div class="filter-btn-box">
-              <button class="button button--secondary active">ACTIVE</button>
+              <button class="button button--active">ACTIVE</button>
               <button class="button button--accent">UPCOMING</button>
             </div>
           </header>
           <div class="swiper-container">
             <div class="swiper-wrapper">
               <div class="swiper-slide text-secondary">
-                <div class="article-card skewed">
+                <div class="article-card skewed card-project">
+                  <span class="badge badge--secondary">Active</span>
                   <img src="images/img/mask-group-3-1@1x.png" alt="" />
                   <div class="title-residence">
                     24 hour <br />
@@ -183,8 +197,10 @@
               <div class="swiper-slide text-secondary">Slide 3</div>
               <div class="swiper-slide text-secondary">Slide 3</div>
             </div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
+            <div class="slider-navigation-btns">
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+            </div>
           </div>
         </section>
       </main>
