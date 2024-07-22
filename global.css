@@ -24,6 +24,27 @@ body {
   /* min-height: 100vh; */
   color: #fff;
 }
+.menu {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.Dashboard-but {
+  color: #1b9a9c;
+}
+.nagative-arow {
+  padding-inline: 16px;
+  border-radius: 100px;
+  height: 45px;
+  border: none;
+}
+.nagative-arow &l .log-p1 {
+  font-size: 1.7rem;
+}
+.log-p2 {
+  font-size: 1.7rem;
+  opacity: 50%;
+}
 .icon-arr {
   color: #fff;
 }

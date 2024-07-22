@@ -20,6 +20,13 @@
       rel="stylesheet"
       href="https://unpkg.com/swiper/swiper-bundle.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="global.css" />
     <style>
       .homepage {
@@ -33,6 +40,9 @@
       p {
         margin-bottom: 0;
       }
+      .fa-bars {
+        display: none;
+      }
 
       .log-action-container {
         font-size: 1.7rem;
@@ -44,6 +54,10 @@
         display: flex;
         justify-content: space-between;
       }
+      .fa-solid {
+        display: none;
+      }
+
       .notify {
         font-size: 1.2rem;
       }
@@ -103,6 +117,29 @@
         z-index: 100;
         transform: skewY(8deg);
       }
+      @media (max-width: 768px) {
+        .log-p1,
+        .log-p2 {
+          display: none;
+        }
+        .fa-solid {
+          display: flex;
+          font-size: 25px;
+        }
+        .menu-but {
+          order: 1;
+          text-align: center;
+          margin: auto;
+        }
+        .menu {
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 10px;
+          flex-wrap: wrap;
+          align-items: center;
+          gap: 15px;
+        }
+      }
     </style>
   </head>
   <body class="gradient-blue-green">
@@ -111,8 +148,9 @@
         <nav class="menu">
           <h1 class="logo">EVOLUTIONS</h1>
           <div class="log-action-container">
-            <p>log out</p>
-            <p class="welcom-text opacity-70">Welcome, [First Name]</p>
+            <p class="log-p1">log out</p>
+            <p class="welcom-text opacity-70 log-p2">Welcome, [First Name]</p>
+            <i class="fa-solid fa-bars"></i>
           </div>
         </nav>
         <p class="text-center notify opacity-70">
@@ -122,7 +160,7 @@
           <p class="breadcrumbs">Homepage</p>
         </div>
         <section>
-          <header class="header mb-4">
+          <header class="header mb-5">
             <h1 class="mb-0">Select a Project</h1>
             <div class="filter-btn-box">
               <button class="button button--active">ACTIVE</button>
@@ -201,6 +239,31 @@
             prevEl: ".swiper-button-prev",
           },
           autoHeight: true,
+          breakpoints: {
+            // when window width is >= 320px
+            320: {
+              slidesPerView: 1,
+              spaceBetween: 20,
+            },
+            // when window width is >= 480px
+            480: {
+              slidesPerView: 2,
+              spaceBetween: 30,
+            },
+            // when window width is >= 640px
+            640: {
+              slidesPerView: 3,
+              spaceBetween: 40,
+            },
+            1200: {
+              slidesPerView: 4,
+              spaceBetween: 40,
+            },
+            1400: {
+              slidesPerView: 5,
+              spaceBetween: 40,
+            },
+          },
         });
       });
     </script>
