@@ -11,6 +11,13 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="global.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <style>
       body {
         background-color: aquamarine;
@@ -22,6 +29,9 @@
         display: flex;
         justify-content: space-between;
         margin-bottom: 10px;
+      }
+      .fa-solid {
+        display: none;
       }
       .Dashboard-but {
         color: #1b9a9c;
@@ -58,7 +68,7 @@
       .unit-detail {
         display: grid;
         grid-template-columns: 33% 17% 17% 33%;
-        grid-template-rows: 100px 30px 150px;
+        grid-template-rows: 145px 45px 270px;
         text-align: center;
       }
       .unit-detail > div {
@@ -72,14 +82,19 @@
         color: #4a494a;
         padding: 15px;
         margin-top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
-      .boy-now {
+      .buy-now {
         grid-row: 1 / 2;
         grid-column: 3 / -1;
         font-size: 5.3rem;
         background-color: #dcfffb;
         color: #4a494a;
-        margin-top: 0;
+        margin-block: 5px;
+        padding: 15px;
+        border: none;
       }
       .pre-sale {
         grid-row: 2 / 3;
@@ -87,6 +102,7 @@
         font-size: 1.4rem;
         background-color: #e8d8f2;
         color: #4a494a;
+        padding: 8px;
       }
       .icon-firstrow {
         grid-row: 3 / 4;
@@ -100,22 +116,70 @@
         font-size: 1.4rem;
         background-color: #e8d8f2;
         color: #4a494a;
+        padding: 8px;
       }
       .sale-ofer {
         font-size: 1.4rem;
         background-color: #e8d8f2;
         color: #4a494a;
+        padding: 8px;
       }
       .icon-div {
         display: flex;
-        gap: 40px;
-        margin-top: 20px;
+        gap: 25px;
+        margin-top: 10px;
       }
       .icon-div img {
-        width: 45px;
+        width: 49px;
         background-color: #ffffff;
         border-radius: 10px;
         padding: 10px;
+      }
+      .icon-div p {
+        text-align: start;
+      }
+      .icon-1stp {
+        font-size: 2rem;
+        color: #ffffff;
+        opacity: 50%;
+      }
+      .icon-2ndp {
+        font-size: 1.5rem;
+        color: #ffffff;
+      }
+      @media (max-width: 1400px) {
+        .availability-dashboard {
+          grid-template-columns: 1fr;
+        }
+      }
+      @media (max-width: 1200px) {
+      }
+      @media (max-width: 992px) {
+      }
+      @media (max-width: 768px) {
+        .log-p1,
+        .log-p2 {
+          display: none;
+        }
+        .fa-bars {
+          display: flex;
+          font-size: 25px;
+        }
+        .menu-but {
+          order: 1;
+          text-align: center;
+          margin: auto;
+        }
+        .menu {
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 10px;
+          flex-wrap: wrap;
+          align-items: center;
+          gap: 15px;
+        }
+      }
+      @media (max-width: 576px) {
       }
     </style>
   </head>
@@ -123,7 +187,7 @@
     <div class="body-wrapper position-relative">
       <div class="menu">
         <button class="nagative-arow">&larr;</button>
-        <div>
+        <div class="menu-but">
           <button class="button Dashboard-but">Dashboard</button>
           <button class="button">Projects</button>
           <button class="button">EV Hub</button>
@@ -131,12 +195,17 @@
         <div class="log-out">
           <p class="log-p1">log out</p>
           <p class="log-p2">Welcome, [First Name]</p>
+          <i class="fa-solid fa-bars"></i>
         </div>
       </div>
       <div class="breadcrumbs-box opacity-70 mb-5 container">
         <span class="breadcrumbs">Homepage</span>
         <span class="icon-arr">&rarr;</span>
         <span class="breadcrumbs">Dashboard</span>
+        <span class="icon-arr">&rarr;</span>
+        <span class="breadcrumbs">floor 3</span>
+        <span class="icon-arr">&rarr;</span>
+        <span class="breadcrumbs">unit 304</span>
       </div>
       <header class="header mb-5 container">
         <h1 class="mb-0">Availability Dashboard</h1>
@@ -150,9 +219,8 @@
             <div class="unit">
               <p>Unit 304</p>
             </div>
-            <div class="boy-now">
-              <p>BUY NOW!</p>
-            </div>
+            <button class="buy-now button">BUY NOW!</button>
+
             <div class="avalable">
               <p>Availability PDF</p>
             </div>
@@ -166,59 +234,59 @@
               <div class="icon-div">
                 <img src="images/img/asset-21-2x-1@1x.png" alt="" />
                 <div>
-                  <p>Unit Type</p>
-                  <p>Simplex</p>
+                  <p class="icon-1stp">Unit Type</p>
+                  <p class="icon-2ndp">Simplex</p>
                 </div>
               </div>
               <div class="icon-div">
-                <img src="images/img/asset-21-2x-1@1x.png" alt="" />
+                <img src="images/img/group-16-1@1x.png" alt="" />
                 <div>
-                  <p>Unit Type</p>
-                  <p>Simplex</p>
+                  <p class="icon-1stp">Kitchen</p>
+                  <p class="icon-2ndp">one</p>
                 </div>
               </div>
               <div class="icon-div">
-                <img src="images/img/asset-21-2x-1@1x.png" alt="" />
+                <img src="images/img/group-18-1@1x.png" alt="" />
                 <div>
-                  <p>Unit Type</p>
-                  <p>Simplex</p>
+                  <p class="icon-1stp">Bedroom</p>
+                  <p class="icon-2ndp">one</p>
                 </div>
               </div>
               <div class="icon-div">
-                <img src="images/img/asset-21-2x-1@1x.png" alt="" />
+                <img src="images/img/group-22-1@1x.png" alt="" />
                 <div>
-                  <p>Unit Type</p>
-                  <p>Simplex</p>
+                  <p class="icon-1stp">Parking</p>
+                  <p class="icon-2ndp">one</p>
                 </div>
               </div>
             </div>
             <div class="icon-2ndrow">
               <div class="icon-div">
-                <img src="images/img/asset-21-2x-1@1x.png" alt="" />
+                <img src="images/img/bal-2x-1@1x.png" alt="" />
                 <div>
-                  <p>Unit Type</p>
-                  <p>Simplex</p>
+                  <p class="icon-1stp">Unit Balcony Area (sq.ft)</p>
+                  <p class="icon-2ndp">79.22</p>
                 </div>
               </div>
               <div class="icon-div">
-                <img src="images/img/asset-21-2x-1@1x.png" alt="" />
+                <img src="images/img/asset-18-2x-1@1x.png" alt="" />
                 <div>
-                  <p>Unit Type</p>
-                  <p>Simplex</p>
+                  <p class="icon-1stp">Unit Area (sq. ft)</p>
+                  <p class="icon-2ndp">795.24</p>
                 </div>
               </div>
               <div class="icon-div">
-                <img src="images/img/asset-21-2x-1@1x.png" alt="" />
+                <img src="images/img/asset-19-2x-1@1x.png" alt="" />
                 <div>
-                  <p>Unit Type</p>
-                  <p>Simplex</p>
+                  <p class="icon-1stp">Total Area (sq.ft)</p>
+                  <p class="icon-2ndp">874.46</p>
                 </div>
               </div>
               <div class="icon-div">
-                <img src="images/img/asset-21-2x-1@1x.png" alt="" />
+                <img src="images/img/group-24-1@1x.png" alt="" />
                 <div>
-                  <p>Unit Type</p>
-                  <p>Simplex</p>
+                  <p class="icon-1stp">Unit Price (AED)</p>
+                  <p class="icon-2ndp">1000000</p>
                 </div>
               </div>
             </div>
